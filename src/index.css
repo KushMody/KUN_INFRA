@@ -1,0 +1,366 @@
+/* =====================================================
+   KUN INFRA PVT LTD - OFFICIAL BRAND STYLESHEET
+   Extracted from Brand Logo & Identity
+   ===================================================== */
+
+:root {
+  /* Primary Navy Palette (from 'KUN' & brand typography) */
+  --color-primary-navy: #092347;
+  --color-primary-dark: #041124;
+  --color-primary-light: #12396B;
+  --color-primary-glow: rgba(9, 35, 71, 0.15);
+
+  /* Metallic Gold Palette (from Architectural Towers & Crest) */
+  --color-gold-base: #C59A27;
+  --color-gold-light: #E5BF4C;
+  --color-gold-dark: #8C6811;
+  --color-gold-accent: #F7D779;
+  --color-gold-subtle: rgba(197, 154, 39, 0.08);
+  --color-gold-glow: rgba(197, 154, 39, 0.25);
+  --gold-gradient: linear-gradient(135deg, #ECC85E 0%, #D4AF37 45%, #9E791D 100%);
+  --gold-gradient-soft: linear-gradient(135deg, rgba(236, 200, 94, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+  --navy-gradient: linear-gradient(135deg, #092347 0%, #041124 100%);
+  --card-dark-gradient: linear-gradient(145deg, #07172E 0%, #030B17 100%);
+
+  /* Neutrals & Surfaces (Derived from Ivory Logo Base & Editorial Whites) */
+  --color-bg-ivory: #FBFBF9;
+  --color-bg-soft: #F4F6F9;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F8FAFC;
+  --color-text-main: #0B192C;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  --color-text-inverse: #F8FAFC;
+  --color-border: #E2E8F0;
+  --color-border-gold: rgba(197, 154, 39, 0.3);
+  --color-border-gold-hover: rgba(197, 154, 39, 0.6);
+
+  /* Typography */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px -2px rgba(11, 25, 44, 0.06);
+  --shadow-card: 0 10px 30px -10px rgba(9, 35, 71, 0.08);
+  --shadow-elevated: 0 20px 40px -15px rgba(9, 35, 71, 0.14);
+  --shadow-gold: 0 8px 24px -6px rgba(197, 154, 39, 0.35);
+
+  /* Layout & Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-ivory);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scroll Offset for Fixed Navigation */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.navy-text {
+  color: var(--color-primary-navy);
+}
+
+/* Global Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Subtle Architectural Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(9, 35, 71, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 35, 71, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(236, 200, 94, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236, 200, 94, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Glassmorphism & Cards */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.gold-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-smooth);
+}
+
+.gold-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-base);
+  box-shadow: var(--shadow-elevated), 0 0 20px rgba(197, 154, 39, 0.15);
+}
+
+.dark-gold-card {
+  background: var(--card-dark-gradient);
+  border: 1px solid rgba(197, 154, 39, 0.25);
+  border-radius: var(--radius-lg);
+  color: #FFFFFF;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  transition: all var(--transition-smooth);
+}
+
+.dark-gold-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-light);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(229, 191, 76, 0.2);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold-base);
+  outline-offset: 2px;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #041124;
+  font-weight: 700;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(197, 154, 39, 0.5);
+  filter: brightness(1.05);
+}
+
+.btn-navy {
+  background: var(--color-primary-navy);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 14px rgba(9, 35, 71, 0.2);
+}
+
+.btn-navy:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-gold-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(9, 35, 71, 0.3);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold-dark);
+  border: 1.5px solid var(--color-gold-base);
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-gold-base);
+  color: #041124;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Badge Styling */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: var(--color-gold-subtle);
+  color: var(--color-gold-dark);
+  border: 1px solid var(--color-border-gold);
+}
+
+.badge-dark-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(236, 200, 94, 0.12);
+  color: var(--color-gold-accent);
+  border: 1px solid rgba(236, 200, 94, 0.3);
+}
+
+/* Golden Decorative Dividers */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  max-width: 80px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-base), transparent);
+}
+
+.gold-divider-diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--color-gold-base);
+  transform: rotate(45deg);
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-base);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Display Utilities */
+@media (min-width: 960px) {
+  .desktop-nav {
+    display: block !important;
+  }
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+  .nav-cta-btn {
+    display: none !important;
+  }
+}
+
+@media (min-width: 680px) {
+  .topbar-hours {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+  }
+}
+
