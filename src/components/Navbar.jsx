@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, MessageSquare, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,12 +14,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Overview', href: '#overview' },
-    { name: 'About & Vision', href: '#vision' },
-    { name: 'Leadership', href: '#leadership' },
-    { name: 'Capabilities', href: '#capabilities' },
-    { name: 'Corporate Office', href: '#location' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'HOME', href: '#home' },
+    { name: 'ABOUT US', href: '#about' },
+    { name: 'SERVICES', href: '#services' },
+    { name: 'EXPERIENCE', href: '#experience' },
+    { name: 'QUALITY & SAFETY', href: '#quality-safety' },
+    { name: 'CONTACT', href: '#contact' },
   ];
 
   return (
@@ -28,35 +28,38 @@ export default function Navbar() {
         position: 'sticky',
         top: 0,
         zIndex: 40,
-        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(251, 251, 249, 0.96)',
+        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(251, 251, 249, 0.98)',
         backdropFilter: 'blur(16px)',
-        borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid rgba(226, 232, 240, 0.6)',
-        boxShadow: scrolled ? '0 4px 20px -2px rgba(9, 35, 71, 0.08)' : 'none',
-        transition: 'all 0.3s ease'
+        borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid rgba(226, 232, 240, 0.8)',
+        boxShadow: scrolled ? '0 4px 20px -2px rgba(9, 35, 71, 0.08)' : '0 1px 3px rgba(0,0,0,0.03)',
+        transition: 'all 0.25s ease'
       }}
     >
       <div className="container" style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop: '0.85rem',
-        paddingBottom: '0.85rem'
+        paddingTop: '0.75rem',
+        paddingBottom: '0.75rem',
+        gap: '1.5rem'
       }}>
         {/* Brand Logo & Name */}
         <a
-          href="#overview"
+          href="#home"
           style={{
-            display: 'flex',
+            display: 'inline-flex',
             alignItems: 'center',
             gap: '0.85rem',
             textDecoration: 'none',
-            color: 'inherit'
+            color: 'inherit',
+            flexShrink: 0,
+            whiteSpace: 'nowrap'
           }}
         >
           <div style={{
             position: 'relative',
-            width: '46px',
-            height: '46px',
+            width: '44px',
+            height: '44px',
             borderRadius: '50%',
             overflow: 'hidden',
             border: '1.5px solid var(--color-gold-base)',
@@ -66,7 +69,7 @@ export default function Navbar() {
           }}>
             <img
               src="/logo.jpg"
-              alt="KUN Infra Pvt Ltd Logo"
+              alt="KUN INFRA PVT LTD Logo"
               style={{
                 width: '100%',
                 height: '100%',
@@ -75,26 +78,28 @@ export default function Navbar() {
               }}
             />
           </div>
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', whiteSpace: 'nowrap' }}>
             <div style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.2rem',
+              fontFamily: 'var(--font-heading)',
+              fontSize: '1.18rem',
               fontWeight: 800,
-              letterSpacing: '0.04em',
+              letterSpacing: '0.03em',
               color: 'var(--color-primary-navy)',
-              lineHeight: 1.15
+              lineHeight: 1.15,
+              whiteSpace: 'nowrap'
             }}>
-              KUN <span style={{ color: 'var(--color-gold-base)' }}>INFRA</span>
+              KUN <span style={{ color: 'var(--color-gold-base)' }}>INFRA</span> PVT LTD
             </div>
             <div style={{
-              fontSize: '0.66rem',
+              fontSize: '0.62rem',
               fontWeight: 700,
-              letterSpacing: '0.18em',
+              letterSpacing: '0.16em',
               textTransform: 'uppercase',
-              color: 'var(--color-text-muted)',
-              marginTop: '1px'
+              color: 'var(--color-gold-dark)',
+              marginTop: '2px',
+              whiteSpace: 'nowrap'
             }}>
-              Building The Future
+              BUILDING THE FUTURE
             </div>
           </div>
         </a>
@@ -104,25 +109,30 @@ export default function Navbar() {
           <ul style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '1.8rem',
-            listStyle: 'none'
+            gap: '1.4rem',
+            listStyle: 'none',
+            margin: 0,
+            padding: 0
           }}>
             {navLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.name} style={{ whiteSpace: 'nowrap' }}>
                 <a
                   href={link.href}
                   style={{
                     textDecoration: 'none',
-                    fontSize: '0.92rem',
-                    fontWeight: 600,
+                    fontSize: '0.8rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 700,
                     color: 'var(--color-text-body)',
-                    letterSpacing: '0.01em',
+                    letterSpacing: '0.04em',
                     transition: 'color var(--transition-fast)',
                     position: 'relative',
-                    padding: '0.3rem 0'
+                    padding: '0.4rem 0',
+                    whiteSpace: 'nowrap',
+                    display: 'inline-block'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'var(--color-primary-navy)';
+                    e.currentTarget.style.color = 'var(--color-gold-dark)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = 'var(--color-text-body)';
@@ -136,18 +146,22 @@ export default function Navbar() {
         </nav>
 
         {/* Right CTA Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
           <a
-            href="tel:+919825135052"
+            href="#contact"
             className="btn btn-gold nav-cta-btn"
             style={{
-              padding: '0.55rem 1.15rem',
-              fontSize: '0.85rem',
-              display: 'inline-flex'
+              padding: '0.52rem 1.15rem',
+              fontSize: '0.78rem',
+              whiteSpace: 'nowrap',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              borderRadius: '6px'
             }}
           >
-            <Phone size={14} />
-            <span>+91 98251 350 52</span>
+            <MessageSquare size={13} style={{ flexShrink: 0 }} />
+            <span style={{ whiteSpace: 'nowrap' }}>DISCUSS A PROJECT</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -158,14 +172,14 @@ export default function Navbar() {
               display: 'none',
               background: 'transparent',
               border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              padding: '0.5rem',
+              borderRadius: 'var(--radius-sm)',
+              padding: '0.45rem',
               cursor: 'pointer',
               color: 'var(--color-primary-navy)'
             }}
             className="mobile-menu-toggle"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -186,9 +200,10 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   style={{
                     textDecoration: 'none',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    color: 'var(--color-text-main)',
+                    fontSize: '0.92rem',
+                    fontFamily: 'var(--font-heading)',
+                    fontWeight: 700,
+                    color: 'var(--color-primary-navy)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -203,13 +218,13 @@ export default function Navbar() {
             ))}
             <li style={{ paddingTop: '0.5rem' }}>
               <a
-                href="tel:+919825135052"
+                href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn btn-navy"
-                style={{ width: '100%', justifyContent: 'center' }}
+                className="btn btn-gold"
+                style={{ width: '100%', justifyContent: 'center', padding: '0.75rem' }}
               >
-                <Phone size={15} />
-                <span>Call Director: +91 98251 350 52</span>
+                <MessageSquare size={15} />
+                <span>DISCUSS A PROJECT</span>
               </a>
             </li>
           </ul>

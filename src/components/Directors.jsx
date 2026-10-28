@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Mail, Award, Check, Copy, Share2, Shield, UserCheck } from 'lucide-react';
+import { Phone, MessageSquare, Check, Copy, Award, Users, Briefcase } from 'lucide-react';
 
 export default function Directors() {
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-
-  const phoneRaw = '+919825135052';
-  const phoneDisplay = '+91 98251 350 52';
 
   const handleCopy = (text, label) => {
     navigator.clipboard.writeText(text);
@@ -22,32 +19,29 @@ export default function Directors() {
     {
       id: 1,
       name: 'Moiz Zakiuddin Godhrawala',
+      share: '50% Shareholding',
       role: 'Director',
-      designation: 'Executive Director & Corporate Liaison',
+      designation: 'Construction background, Interior Designing & Project Management',
       initials: 'MG',
-      phone: phoneDisplay,
-      phoneClean: phoneRaw,
-      whatsapp: 'https://wa.me/919825135052?text=Hello%20Mr.%20Moiz%20Godhrawala%2C%20I%20am%20inquiring%20about%20KUN%20Infra%20Pvt%20Ltd.',
-      bio: 'Leading strategic corporate direction, stakeholder partnerships, and operational governance for KUN Infra Pvt Ltd. Available for direct business, project, and investor inquiries.',
-      highlights: [
-        'Corporate Project Oversight',
-        'Direct Executive Contact',
-        'Strategic Partnerships & Procurement'
-      ]
+      phone: '+91 98251 35052',
+      phoneAlt: '+91 94284 97168',
+      phoneClean: '+919825135052',
+      whatsapp: 'https://wa.me/919825135052?text=Hello%20Mr.%20Moiz%20Godhrawala%2C%20I%20am%20inquiring%20about%20a%20project%20with%20KUN%20INFRA%20PVT%20LTD.',
+      bio: 'Moiz Zakiuddin Godhrawala holds a Bachelor of Science qualification in Interior Design and Project Management. He joined his family’s construction business in Surat, Gujarat, and has been involved in residential and commercial projects from 2001 till date. His experience across Surat and South Gujarat provides the foundation for KUN INFRA’s move into the Mumbai market and its ambition to take on projects of wider scale.',
+      focus: 'His focus is on understanding the client’s vision, coordinating project execution and working to deliver outcomes that meet—and where possible exceed—client expectations.'
     },
     {
       id: 2,
       name: 'Shailesh Veljibhai Paladia',
+      share: '50% Shareholding',
       role: 'Director',
-      designation: 'Director & Strategic Operations',
+      designation: 'Business Management & Growth Strategy',
       initials: 'SP',
-      phone: null, // As not provided in prompt, kept clean & accurate
-      bio: 'Directing infrastructure growth, engineering planning, compliance, and long-term vision to cement KUN Infra Pvt Ltd as a dependable partner in Maharashtra.',
-      highlights: [
-        'Infrastructure Strategic Execution',
-        'Quality & Technical Governance',
-        'Operational Excellence'
-      ]
+      phone: '+91 94284 97168',
+      phoneClean: '+919428497168',
+      whatsapp: 'https://wa.me/919428497168?text=Hello%20Mr.%20Shailesh%20Paladia%2C%20I%20am%20inquiring%20about%20a%20project%20with%20KUN%20INFRA%20PVT%20LTD.',
+      bio: 'Shailesh Veljibhai Paladia brings entrepreneurial and business-management experience from multiple sectors, including import and export, chemical manufacturing, garments and software-related businesses. His commercial perspective, management skills and forward-looking approach support KUN INFRA’s growth plans, business development and ambition to take projects to the next level.',
+      focus: 'Supports business development, strategic planning, cross-sector commercial partnerships, and expanding operational capacity.'
     }
   ];
 
@@ -57,7 +51,7 @@ export default function Directors() {
       className="bg-grid-pattern"
       style={{
         padding: '5.5rem 0',
-        backgroundColor: 'var(--color-bg-ivory)',
+        backgroundColor: '#FFFFFF',
         borderBottom: '1px solid var(--color-border)',
         position: 'relative'
       }}
@@ -90,24 +84,23 @@ export default function Directors() {
         )}
 
         {/* Section Heading */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem' }}>
           <span className="badge-gold" style={{ marginBottom: '0.85rem' }}>
             <Award size={14} style={{ color: 'var(--color-gold-base)' }} />
-            <span>EXECUTIVE GOVERNANCE</span>
+            <span>EXECUTIVE LEADERSHIP</span>
           </span>
           <h2 style={{
-            fontFamily: 'var(--font-serif)',
             fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
             color: 'var(--color-primary-navy)',
-            fontWeight: 800,
+            fontWeight: 900,
             lineHeight: 1.2,
-            marginBottom: '1rem'
+            marginBottom: '1rem',
+            textTransform: 'uppercase'
           }}>
-            Board of Directors
+            LEADERSHIP & EXPERIENCE
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--color-text-body)', lineHeight: 1.7 }}>
-            The leadership of <strong>KUN Infra Pvt Ltd</strong> brings decisive management, technical experience, 
-            and ethical dedication to guide our mission of Building The Future.
+            Drawing on the directors’ experience in construction, project execution, and cross-sector business management to drive disciplined infrastructure growth.
           </p>
         </div>
 
@@ -116,8 +109,8 @@ export default function Directors() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
           gap: '2.5rem',
-          maxWidth: '1050px',
-          margin: '0 auto'
+          maxWidth: '1100px',
+          margin: '0 auto 3.5rem'
         }}>
           {directors.map((director) => (
             <div
@@ -143,12 +136,11 @@ export default function Directors() {
               }} />
 
               <div>
-                {/* Header with Monogram & Badges */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                  {/* Monogram Badge */}
+                {/* Header with Monogram & Titles */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', marginBottom: '1.5rem' }}>
                   <div style={{
-                    width: '68px',
-                    height: '68px',
+                    width: '64px',
+                    height: '64px',
                     borderRadius: '50%',
                     background: 'var(--navy-gradient)',
                     border: '2px solid var(--color-gold-base)',
@@ -159,8 +151,8 @@ export default function Directors() {
                     flexShrink: 0
                   }}>
                     <span style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '1.4rem',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '1.35rem',
                       fontWeight: 800,
                       color: 'var(--color-gold-accent)',
                       letterSpacing: '0.05em'
@@ -170,141 +162,171 @@ export default function Directors() {
                   </div>
 
                   <div>
-                    <span className="badge-gold" style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem' }}>
-                      {director.role}
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.3rem' }}>
+                      <span className="badge-gold" style={{ fontSize: '0.7rem', padding: '0.2rem 0.55rem' }}>
+                        {director.role}
+                      </span>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-gold-dark)' }}>
+                        ({director.share})
+                      </span>
+                    </div>
                     <h3 style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '1.35rem',
+                      fontSize: '1.3rem',
                       fontWeight: 800,
                       color: 'var(--color-primary-navy)',
-                      marginTop: '0.35rem',
-                      lineHeight: 1.25
+                      lineHeight: 1.25,
+                      marginBottom: '0.25rem'
                     }}>
                       {director.name}
                     </h3>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--color-gold-dark)', fontWeight: 600 }}>
-                      KUN Infra Pvt Ltd
+                    <div style={{ fontSize: '0.85rem', color: 'var(--color-gold-dark)', fontWeight: 600, lineHeight: 1.4 }}>
+                      {director.designation}
                     </div>
                   </div>
                 </div>
 
+                {/* Biography */}
                 <p style={{
                   fontSize: '0.94rem',
-                  lineHeight: 1.65,
+                  lineHeight: 1.7,
                   color: 'var(--color-text-body)',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.25rem'
                 }}>
                   {director.bio}
                 </p>
 
-                {/* Key Responsibilities / Highlights */}
+                {/* Focus Callout */}
                 <div style={{
                   backgroundColor: 'var(--color-bg-soft)',
                   padding: '1rem 1.25rem',
                   borderRadius: 'var(--radius-md)',
                   marginBottom: '1.75rem',
-                  border: '1px solid var(--color-border)'
+                  borderLeft: '3px solid var(--color-gold-base)'
                 }}>
                   <div style={{
                     fontSize: '0.75rem',
                     fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
-                    color: 'var(--color-text-muted)',
-                    marginBottom: '0.5rem'
+                    color: 'var(--color-primary-navy)',
+                    marginBottom: '0.25rem'
                   }}>
-                    Leadership Scope
+                    Core Responsibility & Focus
                   </div>
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-                    {director.highlights.map((item, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--color-text-main)' }}>
-                        <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--color-gold-base)' }} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)', lineHeight: 1.55 }}>
+                    {director.focus}
+                  </p>
                 </div>
               </div>
 
               {/* Contact Actions Footer */}
-              <div>
-                {director.phone ? (
-                  <div style={{
-                    borderTop: '1px solid var(--color-border)',
-                    paddingTop: '1.25rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.85rem'
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-                      <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
-                        Direct Telephone:
-                      </div>
-                      <button
-                        onClick={() => handleCopy(director.phoneClean, 'Phone number')}
-                        style={{
-                          background: 'transparent',
-                          border: 'none',
-                          color: 'var(--color-gold-dark)',
-                          fontSize: '0.78rem',
-                          fontWeight: 600,
-                          cursor: 'pointer',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '0.3rem'
-                        }}
-                      >
-                        {copiedPhone ? <Check size={13} color="#16A34A" /> : <Copy size={13} />}
-                        <span>{copiedPhone ? 'Copied' : 'Copy Number'}</span>
-                      </button>
-                    </div>
+              <div style={{
+                borderTop: '1px solid var(--color-border)',
+                paddingTop: '1.25rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
+                    Direct Telephone: <strong style={{ color: 'var(--color-primary-navy)' }}>{director.phone}</strong>
+                  </div>
+                  <button
+                    onClick={() => handleCopy(director.phoneClean, 'Phone number')}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      color: 'var(--color-gold-dark)',
+                      fontSize: '0.78rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.3rem'
+                    }}
+                  >
+                    {copiedPhone ? <Check size={13} color="#16A34A" /> : <Copy size={13} />}
+                    <span>{copiedPhone ? 'Copied' : 'Copy'}</span>
+                  </button>
+                </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                      <a
-                        href={`tel:${director.phoneClean}`}
-                        className="btn btn-navy"
-                        style={{ fontSize: '0.85rem', padding: '0.65rem 0.85rem' }}
-                      >
-                        <Phone size={14} />
-                        <span>Call Direct</span>
-                      </a>
-                      <a
-                        href={director.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-gold"
-                        style={{ fontSize: '0.85rem', padding: '0.65rem 0.85rem' }}
-                      >
-                        <MessageSquare size={14} />
-                        <span>WhatsApp</span>
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <div style={{
-                    borderTop: '1px solid var(--color-border)',
-                    paddingTop: '1.25rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.65rem'
-                  }}>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--color-text-muted)' }}>
-                      Corporate Communication:
-                    </div>
-                    <a
-                      href="#contact"
-                      className="btn btn-outline-gold"
-                      style={{ fontSize: '0.85rem', padding: '0.65rem 0.85rem', width: '100%' }}
-                    >
-                      <Mail size={14} />
-                      <span>Send Inquiries via Corporate Office</span>
-                    </a>
-                  </div>
-                )}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <a
+                    href={`tel:${director.phoneClean}`}
+                    className="btn btn-navy"
+                    style={{ fontSize: '0.8rem', padding: '0.65rem 0.85rem' }}
+                  >
+                    <Phone size={14} />
+                    <span>Call</span>
+                  </a>
+                  <a
+                    href={director.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-gold"
+                    style={{ fontSize: '0.8rem', padding: '0.65rem 0.85rem' }}
+                  >
+                    <MessageSquare size={14} />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* A Project-Led Team Strip */}
+        <div style={{
+          background: 'linear-gradient(135deg, #092347 0%, #041124 100%)',
+          borderRadius: 'var(--radius-xl)',
+          padding: '2.5rem',
+          color: '#FFFFFF',
+          border: '1.5px solid rgba(197, 154, 39, 0.3)',
+          boxShadow: 'var(--shadow-card)',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '2rem',
+          alignItems: 'center',
+          maxWidth: '1100px',
+          margin: '0 auto'
+        }}>
+          <div>
+            <span className="badge-dark-gold" style={{ marginBottom: '0.75rem' }}>
+              DELIVERY MODEL
+            </span>
+            <h3 style={{
+              fontSize: '1.6rem',
+              fontWeight: 800,
+              marginBottom: '0.75rem'
+            }}>
+              A Project-Led Team
+            </h3>
+            <p style={{ color: '#CBD5E1', fontSize: '0.98rem', lineHeight: 1.7 }}>
+              KUN INFRA PVT LTD currently works with a designated team of project managers, civil engineers, contractors and subcontractors. Additional professionals and specialist contractors are engaged on a project-by-project basis according to the scope, technical needs and delivery plan.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.85rem',
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            padding: '1.5rem',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}>
+            {[
+              'Project Managers & Site Supervision Teams',
+              'Civil & Structural Engineers',
+              'Qualified Contractors & Specialist Subcontractors',
+              'Tailored engagement aligned with project brief & technical scope'
+            ].map((text, idx) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-gold-light)', flexShrink: 0 }} />
+                <span style={{ fontSize: '0.9rem', color: '#F1F5F9' }}>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

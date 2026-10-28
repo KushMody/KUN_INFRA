@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, ArrowUp, ShieldCheck, Mail } from 'lucide-react';
+import { Phone, MapPin, Mail, ArrowUp, ShieldCheck, Clock, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -11,24 +11,64 @@ export default function Footer() {
       backgroundColor: 'var(--color-primary-dark)',
       color: '#FFFFFF',
       borderTop: '2px solid var(--color-gold-base)',
-      paddingTop: '4.5rem',
-      paddingBottom: '2.5rem',
       position: 'relative'
     }}>
-      <div className="container">
-        {/* Main Footer Grid */}
+      {/* Closing Call to Action Banner (from document) */}
+      <div style={{
+        backgroundColor: 'var(--color-primary-navy)',
+        borderBottom: '1px solid rgba(197, 154, 39, 0.25)',
+        padding: '3.5rem 0'
+      }}>
+        <div className="container">
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '2rem'
+          }}>
+            <div style={{ maxWidth: '650px' }}>
+              <span className="badge-dark-gold" style={{ marginBottom: '0.75rem' }}>
+                PROJECT CONSULTATION
+              </span>
+              <h3 style={{
+                fontSize: 'clamp(1.7rem, 3vw, 2.2rem)',
+                fontWeight: 900,
+                color: '#FFFFFF',
+                marginBottom: '0.5rem',
+                textTransform: 'uppercase'
+              }}>
+                PLANNING A PROJECT? LET’S TALK.
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.65 }}>
+                Share a little about your construction plans and location. Our team can discuss your requirements and the next steps for a suitable project consultation.
+              </p>
+            </div>
+
+            <div>
+              <a href="#contact" className="btn btn-gold" style={{ padding: '0.9rem 1.8rem' }}>
+                <span>SEND A PROJECT ENQUIRY</span>
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Body */}
+      <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2.5rem' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '3rem',
           marginBottom: '3.5rem'
         }}>
-          {/* Column 1: Company & Brand Identity */}
+          {/* Column 1: Brand & Official Status */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
               <div style={{
-                width: '44px',
-                height: '44px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '50%',
                 overflow: 'hidden',
                 border: '1.5px solid var(--color-gold-base)',
@@ -37,160 +77,161 @@ export default function Footer() {
               }}>
                 <img
                   src="/logo.jpg"
-                  alt="KUN Infra Logo"
+                  alt="KUN INFRA PVT LTD Logo"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
               <div>
                 <div style={{
-                  fontFamily: 'var(--font-serif)',
+                  fontFamily: 'var(--font-heading)',
                   fontSize: '1.2rem',
-                  fontWeight: 800,
+                  fontWeight: 900,
                   letterSpacing: '0.04em',
                   color: '#FFFFFF'
                 }}>
-                  KUN <span style={{ color: 'var(--color-gold-light)' }}>INFRA</span>
+                  KUN <span style={{ color: 'var(--color-gold-light)' }}>INFRA</span> PVT LTD
                 </div>
                 <div style={{
-                  fontSize: '0.66rem',
+                  fontSize: '0.65rem',
                   fontWeight: 700,
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.14em',
                   textTransform: 'uppercase',
                   color: 'var(--color-gold-accent)'
                 }}>
-                  Building The Future
+                  BUILDING THE FUTURE
                 </div>
               </div>
             </div>
 
-            <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.65, marginBottom: '1.5rem' }}>
-              KUN Infra Pvt Ltd is a premier infrastructure entity dedicated to executing high-standard civil, commercial, and structural works with uncompromising integrity.
+            <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+              Construction solutions for the places where people live, work, connect and grow. Residential, commercial and civil construction across Mumbai and South Gujarat.
             </p>
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: 'var(--color-gold-accent)' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              fontSize: '0.78rem',
+              color: 'var(--color-gold-accent)',
+              backgroundColor: 'rgba(236, 200, 94, 0.08)',
+              padding: '0.35rem 0.65rem',
+              borderRadius: 'var(--radius-sm)',
+              border: '1px solid rgba(236, 200, 94, 0.2)'
+            }}>
               <ShieldCheck size={14} />
-              <span>Registered Private Limited Entity</span>
+              <span>Construction • Civil Works • Project Management</span>
             </div>
           </div>
 
-          {/* Column 2: Board of Directors & Governance */}
+          {/* Column 2: Board of Directors & Shareholding */}
           <div>
             <h4 style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.1rem',
-              fontWeight: 700,
+              fontSize: '1.05rem',
+              fontWeight: 800,
               color: 'var(--color-gold-light)',
               marginBottom: '1.25rem',
-              letterSpacing: '0.04em'
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase'
             }}>
-              Board of Directors
+              Directors (50% / 50%)
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
               <div style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 padding: '0.85rem 1rem',
                 borderRadius: 'var(--radius-sm)',
                 border: '1px solid rgba(255, 255, 255, 0.08)'
               }}>
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#FFFFFF' }}>
-                  Moiz Zakiuddin Godhrawala
+                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#FFFFFF' }}>
+                  Moiz Zakiuddin Godhrawala (50%)
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--color-gold-accent)', marginBottom: '0.35rem' }}>
-                  Director
+                <div style={{ fontSize: '0.76rem', color: 'var(--color-gold-accent)' }}>
+                  Director | Construction, Interior Design & PM
                 </div>
-                <a
-                  href="tel:+919825135052"
-                  style={{
-                    color: '#E2E8F0',
-                    textDecoration: 'none',
-                    fontSize: '0.85rem',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.35rem'
-                  }}
-                >
-                  <Phone size={12} color="var(--color-gold-light)" />
-                  <span>+91 98251 350 52</span>
-                </a>
               </div>
 
               <div style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 padding: '0.85rem 1rem',
                 borderRadius: 'var(--radius-sm)',
                 border: '1px solid rgba(255, 255, 255, 0.08)'
               }}>
-                <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#FFFFFF' }}>
-                  Shailesh Veljibhai Paladia
+                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#FFFFFF' }}>
+                  Shailesh Veljibhai Paladia (50%)
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--color-gold-accent)' }}>
-                  Director
+                <div style={{ fontSize: '0.76rem', color: 'var(--color-gold-accent)' }}>
+                  Director | Business Management & Growth Strategy
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Column 3: Corporate Registered Office */}
+          {/* Column 3: Corporate Office & Direct Contacts */}
           <div>
             <h4 style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.1rem',
-              fontWeight: 700,
+              fontSize: '1.05rem',
+              fontWeight: 800,
               color: 'var(--color-gold-light)',
               marginBottom: '1.25rem',
-              letterSpacing: '0.04em'
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase'
             }}>
-              Corporate Office
+              Office & Inquiries
             </h4>
 
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1.25rem' }}>
-              <MapPin size={18} style={{ color: 'var(--color-gold-light)', flexShrink: 0, marginTop: '3px' }} />
-              <div style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.6 }}>
-                <strong>Everest Nivara</strong><br />
-                Office No. 401, Plot No. D3,<br />
-                Thane, New Mumbai (Navi Mumbai)<br />
-                Maharashtra – 400 703
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem' }}>
+              <MapPin size={17} style={{ color: 'var(--color-gold-light)', flexShrink: 0, marginTop: '2px' }} />
+              <div style={{ fontSize: '0.88rem', color: '#CBD5E1', lineHeight: 1.55 }}>
+                Plot No. D-3, 401, Everest Nivara,<br />
+                Thane, Navi Mumbai – 400 703<br />
+                Maharashtra, India
               </div>
             </div>
 
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Everest+Nivara+Plot+D3+Thane+Navi+Mumbai+400703"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: 'var(--color-gold-accent)',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem'
-              }}
-            >
-              <span>Get Directions to Office →</span>
-            </a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+              <Clock size={16} style={{ color: 'var(--color-gold-light)', flexShrink: 0 }} />
+              <div style={{ fontSize: '0.85rem', color: '#CBD5E1' }}>
+                Mon to Sat, 9:30 AM – 6:30 PM
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+              <Mail size={16} style={{ color: 'var(--color-gold-light)', flexShrink: 0 }} />
+              <a href="mailto:kuninfrapvtltd@gmail.com" style={{ fontSize: '0.85rem', color: '#E2E8F0', textDecoration: 'none' }}>
+                kuninfrapvtltd@gmail.com
+              </a>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Phone size={16} style={{ color: 'var(--color-gold-light)', flexShrink: 0 }} />
+              <div style={{ fontSize: '0.85rem', color: '#E2E8F0' }}>
+                +91 94284 97168 / +91 98251 35052
+              </div>
+            </div>
           </div>
 
-          {/* Column 4: Quick Navigation */}
+          {/* Column 4: Main Navigation Links */}
           <div>
             <h4 style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.1rem',
-              fontWeight: 700,
+              fontSize: '1.05rem',
+              fontWeight: 800,
               color: 'var(--color-gold-light)',
               marginBottom: '1.25rem',
-              letterSpacing: '0.04em'
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase'
             }}>
-              Quick Links
+              Navigation
             </h4>
+
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {[
-                { name: 'Corporate Overview', href: '#overview' },
-                { name: 'Vision & Values', href: '#vision' },
-                { name: 'Board of Directors', href: '#leadership' },
-                { name: 'Capabilities', href: '#capabilities' },
-                { name: 'Office & Directions', href: '#location' },
-                { name: 'Contact Inquiries', href: '#contact' }
+                { name: 'HOME', href: '#home' },
+                { name: 'ABOUT US', href: '#about' },
+                { name: 'SERVICES', href: '#services' },
+                { name: 'PROJECTS & EXPERIENCE', href: '#experience' },
+                { name: 'QUALITY & SAFETY', href: '#quality-safety' },
+                { name: 'CONTACT US', href: '#contact' }
               ].map((link, idx) => (
                 <li key={idx}>
                   <a
@@ -198,7 +239,8 @@ export default function Footer() {
                     style={{
                       color: '#94A3B8',
                       textDecoration: 'none',
-                      fontSize: '0.88rem',
+                      fontSize: '0.84rem',
+                      fontWeight: 600,
                       transition: 'color 0.2s ease'
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-gold-light)'}
@@ -212,7 +254,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Banner: Final Brand Message & Copyright */}
         <div style={{
           borderTop: '1px solid rgba(255, 255, 255, 0.12)',
           paddingTop: '2rem',
@@ -221,15 +263,16 @@ export default function Footer() {
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           gap: '1rem',
-          fontSize: '0.82rem',
+          fontSize: '0.84rem',
           color: '#94A3B8'
         }}>
           <div>
-            © {new Date().getFullYear()} <strong>KUN Infra Pvt Ltd</strong>. All rights reserved. Building The Future.
+            <strong>KUN INFRA PVT LTD</strong>  |  <strong>BUILDING THE FUTURE</strong><br />
+            <span style={{ fontSize: '0.78rem' }}>Construction • Civil Works • Project Management • www.kuninfra.com</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            <span>Thane • Navi Mumbai • Maharashtra</span>
+            <span>© {new Date().getFullYear()} KUN INFRA PVT LTD. All rights reserved.</span>
             <button
               onClick={scrollToTop}
               title="Back to Top"
